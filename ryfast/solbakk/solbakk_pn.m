@@ -1,4 +1,3 @@
-% Example-05-01: A Simple Classic Petri Net
 % the main file to run simulation 
 
 clear all; clc; 
