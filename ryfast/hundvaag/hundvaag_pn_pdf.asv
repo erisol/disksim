@@ -1,0 +1,5 @@
+function [pns] = buoey_pn_pdf()
+pns.PN_name = 'Surplus mass handling - buoey';
+pns.set_of_Ps = {'pHundvaag', 'pLandTrans', 'pKunset', 'pSeaTrans', 'pRosenberg','pLervik','pFiskå'};
+pns.set_of_Ts = {'tLandLoad','tLandTrans','tSeaLoad','tSeaTrans','tDump'};
+pns.set_of_As =  {'pHundvaag','tLandLoad',1,'','',,
