@@ -1,5 +1,5 @@
 function [pns] = tasta_pn_pdf()
-pns.PN.name = 'Tasta';
+pns.PN_name = 'tasta';
 
 pns.set_of_Ps = {...
 'pStorageAtTasta',...
