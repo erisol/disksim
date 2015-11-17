@@ -13,6 +13,8 @@ global_info.place_hundvaag_projected_mass = 0; %todo: m3 projected mass from hun
 global_info.place_solbakk_projected_mass = 0; %todo: m3 projected mass from solbakk
 global_info.place_eiganes_projected_mass = 0; %todo: m3 projected mass from eiganes
 
+global_info.dumped_at_jaattaa = 0; %amount dumped at jåttå
+
 global_info.truck_per_place = randi([10,20],1,1); %amount of trucks at any given place
 global_info.truck_capacity = 8; %capacity in m3
 global_info.truck_load_time = [0 0 0]; %todo: specify the load time
