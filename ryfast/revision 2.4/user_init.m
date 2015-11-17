@@ -1,3 +1,5 @@
+function user_init()
+
 global global_info;
 
 global_info.time_startclock = [0 0 0]; %start clock at midnight
@@ -31,7 +33,6 @@ global_info.barge_load_time = [0 0 0]; %todo: specify the load time
 global_info.barge_unload_time = [0 0 0]; %todo: specify the unload time
 
 global_info.road_tasta_hinna_length = 8000; %length of road in m between tasta and hinna
-global_info.road_tasta_hinna_capacity = trucks; %capacity of trucks on road each
 global_info.road_tasta_hinna_avg_time = [0 12 0]; %average time of travel on the road. information from Google Maps
 global_info.road_tasta_hinna_time_traffic_start = [14 0 0];
 global_info.road_tasta_hinna_time_traffic_stop  = [17 0 0];
