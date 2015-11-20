@@ -1,17 +1,17 @@
-clear all; clc; 
-user_init()
-global ryfast_info;
+clear all; clc;
 global global_info; % user data
-global_info.START_AT = [7 0 0];
+global_info.START_AT = [7 0 0]; %simulation starts at 7 in the morning
 global_info.DELTA_TIME = 60;
-global_info.STOP_AT = [23 00 0];
-%global_info.PRINT_LOOP_NUMBER = 1; 
-%global_info.MAX_LOOP = 1;
+global_info.STOP_AT = [23 00 0]; %simulation starts at 11 in the evening
+global_info.generated_mass_tasta = 0; %generated mass in m3
+global_info.truck_capacity = 5; %capacity in m3
+global_info.road_tasta_hinna_capacity = 7; %capacity of trucks on road each way
+global_info.dumped_at_jaattaa = 0;
 
 pns = pnstruct('tasta_pn_pdf'); % create petri net structure
 
 dyn.m0 = {'pStorageAtTasta',0,...
-          'pTransportVehicles',ryfast_info.road_tasta_hinna_capacity,...
+          'pTransportVehicles',global_info.road_tasta_hinna_capacity,...
           'pEnroute',0,...
           'pDumpAtJaatta',0,...
           'pVehiclesEnrouteBack',0,...
@@ -23,20 +23,16 @@ dyn.ft = {'tMassGenerator',1,...
           'tStatusReportGenerator',1,...
           }; 
       
-
-priorset('tStartTransport', 5);
-priorset('tDumpMass', 10);
-
 prnsys(pns, dyn);
 pni = initialdynamics(pns, dyn);
-ryfast_info.start_time = current_time();
 sim = gpensim(pni); % perform simulation runs
 
 plotp(sim, {...
-'pStorageAtTasta',...
+'pDumpAtJaatta',...
 'pEnroute',...
+'pStorageAtTasta',...
 'pVehiclesEnrouteBack',...
 'pTransportVehicles',...
 }); % plot the results
 
-fprintf('amount dumped: %s\n', num2str(ryfast_info.dumped_at_jaattaa));
+fprintf('amount dumped today: %s\n', num2str(global_info.dumped_at_jaattaa));
