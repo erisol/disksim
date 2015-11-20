@@ -21,7 +21,7 @@ ryfast_info.dumped_at_jaattaa = 0; %amount dumped at jåttå
 ryfast_info.dumped_at_jaattaa_total = 0;
 
 ryfast_info.truck_per_place = randi([10,20],1,1); %amount of trucks at any given place
-ryfast_info.truck_capacity = 8; %capacity in m3
+ryfast_info.truck_capacity = 5; %capacity in m3
 ryfast_info.truck_load_time = [0 0 0]; %todo: specify the load time
 ryfast_info.truck_unload_time = [0 0 0]; %todo: specify the unload time
 
@@ -41,7 +41,7 @@ ryfast_info.road_tasta_hinna_time_traffic_start = [14 0 0];
 ryfast_info.road_tasta_hinna_time_traffic_stop  = [17 0 0];
 ryfast_info.road_tasta_hinna_time_traffic_time = [0 23 0]; %time of travel during rush hours/trafficated road. information from Google Maps
 ryfast_info.road_tasta_hinna_length = 8000; %length of road in m between tasta and hinna
-ryfast_info.road_tasta_hinna_capacity = 15; %capacity of trucks on road each way
+ryfast_info.road_tasta_hinna_capacity = 7; %capacity of trucks on road each way
 ryfast_info.road_x_y_avg_time = [0 12 0]; %average time of travel on the road. information from Google Maps
 ryfast_info.road_x_y_time_traffic_start = [14 0 0];
 ryfast_info.road_x_y_time_traffic_stop  = [17 0 0];
