@@ -1,4 +1,4 @@
-function [fire, transition] = tCrushMass_pre (transition)
+function [fire, transition] = tDumpMass_pre (transition)
 global global_info;
 fire = 0;
 

@@ -3,9 +3,9 @@ global global_info; % user data
 global_info.START_AT = [7 0 0]; %simulation starts at 7 in the morning
 global_info.DELTA_TIME = 60;
 global_info.STOP_AT = [23 00 0]; %simulation starts at 11 in the evening
-global_info.mass_per_blast = 92;
+global_info.mass_per_blast = 90;
 global_info.generated_mass_solbakk = 0; %generated mass in m3
-global_info.belt_capacity = 1.1; %capacity in m3
+global_info.belt_capacity = 1.02; %capacity in m3/min
 global_info.dumped_at_solbakk = 0;
 
 pns = pnstruct('solbakk_pn_pdf'); % create petri net structure
@@ -18,15 +18,16 @@ dyn.ft = {...
     'tMassGenerator',1,...
     'tLoadOntoConveyorBelt',1,...
     'tCrushMass',1,...
+    'tStatusReportGenerator',1,...
     }; 
 
 pni = initialdynamics(pns, dyn);
 sim = gpensim(pni); % perform simulation runs
+global_info.generated_mass_solbakk = global_info.generated_mass_solbakk - global_info.mass_per_blast*global_info.belt_capacity;
 
 plotp(sim, {...
     'pStorageAtSolbakk',...
     'pBelt',...
-    'pDumpAtSolbakk',...
     }); % plot the results
 fprintf('amount generated today: %s\n', num2str(global_info.generated_mass_solbakk));
 fprintf('amount dumped today: %s\n', num2str(global_info.dumped_at_solbakk));
