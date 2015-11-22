@@ -5,7 +5,7 @@ global_info.DELTA_TIME = 60;
 global_info.STOP_AT = [23 00 0]; %simulation starts at 11 in the evening
 global_info.mass_per_blast = 55;
 global_info.generated_mass_buoey = 0; %generated mass in m3
-global_info.belt_capacity = 1; %capacity in m3/min
+global_info.belt_capacity = 1; %capacity in m3/load
 global_info.dumped_at_rosenberg = 0;
 
 pns = pnstruct('buoey_pn_pdf'); % create petri net structure
@@ -23,7 +23,7 @@ dyn.ft = {...
 
 pni = initialdynamics(pns, dyn);
 sim = gpensim(pni); % perform simulation runs
-global_info.generated_mass_buoey = global_info.generated_mass_buoey - global_info.mass_per_blast*global_info.belt_capacity;
+global_info.generated_mass_buoey = global_info.generated_mass_buoey - global_info.mass_per_blast;
 
 plotp(sim, {...
     'pStorageAtBuoey',...
