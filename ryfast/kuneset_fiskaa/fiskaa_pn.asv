@@ -6,7 +6,7 @@ global_info.STOP_AT = [23 00 0]; %simulation starts at 11 in the evening
 global_info.generated_mass_kuneset = 0; %generated mass in m3
 global_info.barge_capacity = 10; %capacity in m3
 global_info.mass_per_blast = 110;
-global_info.road_kuneset_fiskaa_capacity = 15; %capacity of barge on road each way
+global_info.road_kuneset_fiskaa_capacity = 10; %capacity of barge on road each way
 global_info.dumped_at_fiskaa = 0;
 
 pns = pnstruct('fiskaa_pn_pdf'); % create petri net structure
