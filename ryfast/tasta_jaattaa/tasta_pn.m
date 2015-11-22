@@ -5,7 +5,7 @@ global_info.DELTA_TIME = 60; %time in hours
 global_info.STOP_AT = [23 00 1]; %simulation end at 11 in the evening
 global_info.generated_mass_tasta = 0; %generated mass in m3
 global_info.truck_capacity = 10; %capacity in m3
-global_info.mass_per_blast = 140; %mass produced by each blast
+global_info.mass_per_blast = 90; %mass produced by each blast
 global_info.road_tasta_hinna_capacity = 2; %capacity of trucks on road each way
 global_info.dumped_at_jaattaa = 0;
 

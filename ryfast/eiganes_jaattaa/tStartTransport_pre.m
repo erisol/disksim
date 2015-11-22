@@ -6,10 +6,10 @@ if current_time() < 79200
         if mod(current_time()/60,3)==0 
             %start transport and calculate transport time
             if current_time() > 52200 && current_time() < 59400 
-                transition.new_color = num2str(current_time()+ 60*randi([12,14],1,1));
+                transition.new_color = num2str(current_time()+ 60*randi([16,18],1,1));
                 transition.override = 1;
             else
-                transition.new_color = num2str(current_time()+ 60*randi([10,13],1,1));
+                transition.new_color = num2str(current_time()+ 60*randi([14,16],1,1));
                 transition.override = 1;
             end
             fprintf('Time %s: \t Place: pEnroute \t \t \t Action: Loaded truck departed\n',string_HH_MM_SS(current_time()));
