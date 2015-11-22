@@ -4,6 +4,7 @@ fire = 0;
 
 tokID = tokenAny('pEnroute', 1);
 colors = get_color('pEnroute',tokID);
+%start return trip and calculate trip time after dumping
 
 if current_time >= str2double(colors{1})
     fprintf('Time %s: \t Place: pDumpAtKuneset \t\t Action: Load dumped at Kuneset\n',string_HH_MM_SS(current_time()));

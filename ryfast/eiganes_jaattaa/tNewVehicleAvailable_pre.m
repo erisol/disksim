@@ -1,6 +1,6 @@
 function [fire, transition] = tNewVehicleAvailable_pre (transition)
 fire = 0;
-%a new vehicle is available 10-13 minutes after dumping its load at jåttå
+%a new vehicle becomes available a certain time after dumping its load
 tokID = tokenAny('pVehiclesEnrouteBack', 1);
 colors = get_color('pVehiclesEnrouteBack',tokID);
 if current_time >= str2double(colors{1})
