@@ -9,7 +9,6 @@ if mod(current_time()/60,60)==0
     p4 = get_place('pDumpAtLervik');
     p5 = get_place('pVehiclesEnrouteBack');
     fprintf('\n######## STATUS REPORT AT TIME %s ########\n',string_HH_MM_SS(current_time()));
-    fprintf('Generated mass: \t\t\t\t\t %dm3\n',global_info.generated_mass_kuneset);
     fprintf('Dumped mass: \t\t\t\t\t\t %dm3\n',global_info.dumped_at_lervik);
     fprintf('Tokens at pStorageAtKuneset: \t\t %d\n',p1.tokens);
     fprintf('Tokens at pTransportVehicles: \t\t %d\n',p2.tokens);
